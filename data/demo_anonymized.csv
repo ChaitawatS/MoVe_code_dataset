@@ -1,0 +1,165 @@
+user_id,SEX,Nationality,Ethnic,Occupation,Education,Village_code,age_group
+0,Female,Myanmar,Karen,Agriculture/Farmer,Illiteracy,Suan OiC,25-44
+1,Male,Thai,Karen,Agriculture/Farmer,Illiteracy,Ta La Or Ka,45 up
+2,Male,Thai,Karen,Merchant,Secondary school,Ta La Or Ka,25-44
+3,Female,Thai,Karen,Agriculture/Farmer,Illiteracy,Ta La Or Ka,25-44
+4,Female,Thai,Karen,Merchant,Secondary school,Ta La Or Ka,25-44
+5,Male,Thai,Karen,Labor,Illiteracy,Mae Sa Lid Noi,25-44
+6,Female,Thai,Karen,Agriculture/Farmer,Illiteracy,Ta La Or Ka,45 up
+7,Female,Thai,Karen,Merchant,Secondary school,Suan OiC,25-44
+8,Female,Thai,Karen,Agriculture/Farmer,Illiteracy,Nong Bua,25-44
+9,Female,Thai,Karen,Agriculture/Farmer,Secondary school,Suan OiC,25-44
+10,Female,Thai,Karen,Unemployed,Illiteracy,Mae Sa Lid Noi,25-44
+11,Female,Myanmar,Karen,Labor,Illiteracy,Mae Sa Lid Noi,25-44
+12,Female,Thai,Karen,Merchant,Other,Suan OiC,15-24
+13,Male,Other,Karen,Agriculture/Farmer,Illiteracy,Nong Bua,25-44
+14,Female,Thai,Karen,Merchant,Other,Suan OiC,25-44
+15,Female,Myanmar,Karen,Labor,Illiteracy,Suan OiC,25-44
+16,Female,Thai,Thai,Merchant,Illiteracy,Ta La Or Ka,25-44
+17,Male,Thai,Karen,Labor,Illiteracy,Suan OiC,25-44
+18,Female,Other,Karen,Other,Illiteracy,Ta La Or Ka,25-44
+19,Female,Thai,Karen,Labor,Illiteracy,Mae Sa Lid Noi,25-44
+20,Male,Thai,.,Other,Other,Suan OiC,45 up
+21,Female,Myanmar,Karen,Unemployed,Secondary school,Suan OiC,25-44
+22,Female,Thai,Karen,Other,Secondary school,Nong Bua,25-44
+23,Male,Thai,Karen,Other,Secondary school,Suan OiC,25-44
+24,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,45 up
+25,Female,Thai,Karen,Merchant,Primary school,Suan OiC,45 up
+26,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,45 up
+27,Female,Thai,Karen,Unemployed,Secondary school,Suan OiC,25-44
+28,Male,Myanmar,Karen,Agriculture/Farmer,Primary school,Suan OiC,25-44
+29,Female,Thai,Karen,Unemployed,Primary school,Ta La Or Ka,25-44
+30,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,45 up
+31,Male,Thai,Karen,Merchant,Illiteracy,Suan OiC,25-44
+32,Female,Thai,Karen,Merchant,Primary school,Mae Sa Lid Noi,25-44
+33,Male,Thai,Karen,Labor,Secondary school,Nong Bua,15-24
+34,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,25-44
+35,Female,Thai,Karen,Unemployed,Secondary school,Ta La Or Ka,25-44
+36,Female,Thai,Karen,Agriculture/Farmer,Secondary school,Nong Bua,25-44
+37,Female,Thai,Thai,Other,Secondary school,Ta La Or Ka,25-44
+38,Female,Myanmar,Karen,Labor,Illiteracy,Ta La Or Ka,25-44
+39,Female,Thai,Karen,Unemployed,Illiteracy,Ta La Or Ka,25-44
+40,Female,Thai,Thai,Merchant,Secondary school,Ta La Or Ka,25-44
+41,Male,Thai,Karen,Labor,Primary school,Mae Sa Lid Noi,25-44
+42,Female,Other,Karen,Other,Illiteracy,Mae Sa Lid Noi,25-44
+43,Female,Thai,Karen,Labor,Secondary school,Nong Bua,25-44
+44,Female,Myanmar,Karen,Agriculture/Farmer,Illiteracy,Ta La Or Ka,45 up
+45,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,45 up
+46,Female,Thai,Karen,Other,Illiteracy,Nong Bua,45 up
+47,Female,Thai,Karen,Labor,Primary school,Mae Sa Lid Noi,25-44
+48,Female,Myanmar,Karen,Merchant,Illiteracy,Suan OiC,25-44
+49,Male,Myanmar,Karen,Agriculture/Farmer,Illiteracy,Suan OiC,45 up
+50,Female,Thai,Karen,Labor,Primary school,Suan OiC,25-44
+51,Female,Thai,Karen,Unemployed,Illiteracy,Mae Sa Lid Noi,25-44
+52,Female,Myanmar,Karen,Labor,Illiteracy,Mae Sa Lid Noi,15-24
+53,Female,Thai,Karen,Labor,Secondary school,Ta La Or Ka,25-44
+54,Female,Myanmar,Karen,Unemployed,Illiteracy,Nong Bua,25-44
+55,Female,Thai,Karen,Agriculture/Farmer,Illiteracy,Mae Sa Lid Noi,25-44
+56,Female,Myanmar,Karen,Agriculture/Farmer,Illiteracy,Mae Sa Lid Noi,45 up
+57,Female,Thai,Karen,Unemployed,Primary school,Mae Sa Lid Noi,25-44
+58,Female,Thai,Karen,Agriculture/Farmer,Illiteracy,Suan OiC,25-44
+59,Male,Myanmar,Karen,Labor,Illiteracy,Ta La Or Ka,25-44
+60,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,25-44
+61,Female,Thai,Karen,Unemployed,Primary school,Mae Sa Lid Noi,25-44
+62,Male,Thai,Karen,Merchant,Illiteracy,Mae Sa Lid Noi,45 up
+63,Female,Thai,Karen,Agriculture/Farmer,Primary school,Ta La Or Ka,15-24
+64,Female,Myanmar,Karen,Merchant,Illiteracy,Suan OiC,45 up
+65,Male,Thai,Karen,Labor,Secondary school,Mae Sa Lid Noi,15-24
+66,Male,Thai,Karen,Labor,Illiteracy,Mae Sa Lid Noi,25-44
+67,Female,Thai,Karen,Labor,Illiteracy,Ta La Or Ka,45 up
+68,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,25-44
+69,Female,Thai,Karen,Labor,Illiteracy,Suan OiC,45 up
+70,Female,Thai,Karen,Unemployed,Illiteracy,Ta La Or Ka,45 up
+71,Female,Thai,Karen,Unemployed,Illiteracy,Suan OiC,45 up
+72,Male,Thai,Karen,Agriculture/Farmer,Primary school,Suan OiC,25-44
+73,Female,Thai,Karen,Unemployed,Illiteracy,Ta La Or Ka,25-44
+74,Female,Thai,Karen,Unemployed,Primary school,Ta La Or Ka,25-44
+75,Female,Thai,Thai,Agriculture/Farmer,Secondary school,Ta La Or Ka,25-44
+76,Female,Myanmar,Karen,Unemployed,Secondary school,Ta La Or Ka,25-44
+77,Female,Thai,Karen,Agriculture/Farmer,Secondary school,Nong Bua,25-44
+78,Female,Thai,Karen,Unemployed,Secondary school,Ta La Or Ka,25-44
+79,Female,Thai,Karen,Agriculture/Farmer,Primary school,Ta La Or Ka,25-44
+80,Female,Myanmar,Karen,Agriculture/Farmer,Illiteracy,Ta La Or Ka,25-44
+81,Female,Thai,Thai,Agriculture/Farmer,Secondary school,Ta La Or Ka,25-44
+82,Female,Thai,Karen,Unemployed,Secondary school,Ta La Or Ka,25-44
+83,Female,Thai,Karen,Agriculture/Farmer,Primary school,Ta La Or Ka,25-44
+84,Female,Thai,Karen,Agriculture/Farmer,Illiteracy,Nong Bua,25-44
+85,Male,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,45 up
+86,Female,Thai,Thai,Unemployed,Primary school,Ta La Or Ka,45 up
+87,Female,Myanmar,Karen,Unemployed,Primary school,Ta La Or Ka,25-44
+88,Female,Thai,Karen,Agriculture/Farmer,Secondary school,Nong Bua,15-24
+89,Female,Thai,Karen,Labor,Illiteracy,Mae Sa Lid Noi,25-44
+90,Female,Thai,Karen,Agriculture/Farmer,Illiteracy,Mae Sa Lid Noi,25-44
+91,Female,Myanmar,Karen,Unemployed,Illiteracy,Ta La Or Ka,25-44
+92,Female,Myanmar,Karen,Other,Illiteracy,Ta La Or Ka,45 up
+93,Female,Thai,Karen,Unemployed,Illiteracy,Mae Sa Lid Noi,25-44
+94,Male,Thai,Karen,Labor,Secondary school,Suan OiC,25-44
+95,Female,Other,Karen,Agriculture/Farmer,Illiteracy,Ta La Or Ka,25-44
+96,Female,Thai,Karen,Agriculture/Farmer,Illiteracy,Suan OiC,25-44
+97,Female,Thai,Karen,Unemployed,Illiteracy,Suan OiC,15-24
+98,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,45 up
+99,Female,Myanmar,Karen,Unemployed,Illiteracy,Mae Sa Lid Noi,45 up
+100,Female,Thai,Karen,Unemployed,Illiteracy,Ta La Or Ka,15-24
+101,Female,Thai,Karen,Labor,Secondary school,Nong Bua,25-44
+102,Female,Thai,Karen,Agriculture/Farmer,Illiteracy,Mae Sa Lid Noi,45 up
+103,Female,Thai,Karen,Unemployed,Illiteracy,Suan OiC,45 up
+104,Female,Myanmar,Karen,Merchant,Illiteracy,Mae Sa Lid Noi,25-44
+105,Female,Myanmar,Karen,Agriculture/Farmer,Secondary school,Nong Bua,15-24
+106,Female,Thai,Karen,Student,Primary school,Nong Bua,15-24
+107,Female,Thai,Karen,Agriculture/Farmer,Secondary school,Ta La Or Ka,25-44
+108,Female,Thai,Karen,Unemployed,Secondary school,Nong Bua,25-44
+109,Female,Thai,Karen,Unemployed,Illiteracy,Ta La Or Ka,25-44
+110,Female,Thai,Karen,Merchant,Illiteracy,Nong Bua,45 up
+111,Female,Thai,Karen,Merchant,Primary school,Ta La Or Ka,25-44
+112,Male,Myanmar,Karen,Agriculture/Farmer,Illiteracy,Nong Bua,25-44
+113,Female,Thai,Karen,Agriculture/Farmer,Secondary school,Ta La Or Ka,25-44
+114,Female,Thai,Karen,Labor,Primary school,Suan OiC,25-44
+115,Female,Thai,Karen,Labor,Illiteracy,Mae Sa Lid Noi,25-44
+116,Female,Other,Karen,Student,Illiteracy,Mae Sa Lid Noi,15-24
+117,Female,Thai,Karen,Labor,Primary school,Mae Sa Lid Noi,15-24
+118,Female,Thai,Karen,Labor,Illiteracy,Nong Bua,25-44
+119,Female,Thai,Karen,Unemployed,Secondary school,Nong Bua,15-24
+120,Female,Thai,Karen,Agriculture/Farmer,Illiteracy,Ta La Or Ka,25-44
+121,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,45 up
+122,Male,Myanmar,Karen,Agriculture/Farmer,Illiteracy,Mae Sa Lid Noi,45 up
+123,Female,Thai,Karen,Unemployed,Illiteracy,Mae Sa Lid Noi,25-44
+124,Female,Thai,Karen,Unemployed,Illiteracy,Suan OiC,25-44
+125,Male,Thai,Karen,Agriculture/Farmer,Illiteracy,Mae Sa Lid Noi,25-44
+126,Female,Thai,Karen,Unemployed,Primary school,Suan OiC,15-24
+127,Female,Thai,Karen,Unemployed,Illiteracy,Suan OiC,25-44
+128,Male,Thai,Karen,Labor,Illiteracy,Suan OiC,25-44
+129,Male,Myanmar,Karen,Labor,Illiteracy,Mae Sa Lid Noi,25-44
+130,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,25-44
+131,Male,Thai,Karen,Labor,Illiteracy,Suan OiC,45 up
+132,Male,Thai,Karen,Labor,Primary school,Suan OiC,25-44
+133,Female,Thai,Karen,Unemployed,Primary school,Suan OiC,25-44
+134,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,25-44
+135,Female,Thai,Karen,Unemployed,Other,Suan OiC,25-44
+136,Male,Myanmar,Karen,Labor,Illiteracy,Suan OiC,25-44
+137,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,25-44
+138,Female,Thai,Karen,Unemployed,Primary school,Suan OiC,25-44
+139,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,25-44
+140,Male,Myanmar,Karen,Agriculture/Farmer,Illiteracy,Suan OiC,45 up
+141,Male,Myanmar,Karen,Labor,Illiteracy,Suan OiC,25-44
+142,Female,Thai,Karen,Merchant,Illiteracy,Mae Sa Lid Noi,25-44
+143,Female,Thai,Karen,Agriculture/Farmer,Illiteracy,Mae Sa Lid Noi,25-44
+144,Female,Thai,Karen,Labor,Illiteracy,Mae Sa Lid Noi,15-24
+145,Male,Thai,Karen,Agriculture/Farmer,Illiteracy,Mae Sa Lid Noi,45 up
+146,Female,Thai,Karen,Agriculture/Farmer,Illiteracy,Mae Sa Lid Noi,15-24
+147,Female,Other,Karen,Other,Illiteracy,Mae Sa Lid Noi,15-24
+148,Female,Myanmar,Karen,Labor,Illiteracy,Mae Sa Lid Noi,25-44
+149,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,25-44
+150,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,45 up
+151,Female,Thai,Thai,Merchant,Primary school,Suan OiC,25-44
+152,Female,Thai,Karen,Student,Primary school,Suan OiC,15-24
+153,Male,Thai,Karen,Labor,Illiteracy,Mae Sa Lid Noi,25-44
+154,Female,Myanmar,Karen,Labor,Other,Mae Sa Lid Noi,25-44
+155,Female,Thai,Karen,Labor,Secondary school,Mae Sa Lid Noi,25-44
+156,Female,Thai,.,Other,Other,Suan OiC,25-44
+157,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,45 up
+158,Female,Myanmar,Karen,Unemployed,Illiteracy,Suan OiC,25-44
+159,Female,Thai,Karen,Agriculture/Farmer,Illiteracy,Mae Sa Lid Noi,45 up
+160,Female,Myanmar,Karen,Unemployed,Illiteracy,Mae Sa Lid Noi,45 up
+161,Female,Thai,Karen,Agriculture/Farmer,Illiteracy,Mae Sa Lid Noi,25-44
+162,Female,Myanmar,Karen,Agriculture/Farmer,Illiteracy,Mae Sa Lid Noi,45 up
+163,Female,Myanmar,Karen,Labor,Illiteracy,Mae Sa Lid Noi,25-44
