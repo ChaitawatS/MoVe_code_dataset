@@ -1,0 +1,4 @@
+pyproj==3.3.1
+scipy==1.7.1
+sklearn
+scikit-learn

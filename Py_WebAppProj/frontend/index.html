@@ -1,0 +1,235 @@
+<html>
+<head>
+    
+    <title>JavaScript Flow Map</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css">
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <script src="https://elfalem.github.io/Leaflet.curve/src/leaflet.curve.js"></script>
+    <script src="./scripts/leaflet.geometryutil.js"></script>
+    <script src="./scripts/leaflet-arrowheads.js"></script>
+
+
+
+    <style type="text/css">
+      html, body, #container {
+        width: 100%; height: 100%; margin: 0; padding: 0;
+      }
+      body {
+        padding: 0px;
+        margin: 0px;
+      }
+
+     #mapid {
+         height: 1000px;
+     }
+    </style>
+</head>
+<body>
+<div id="mapid"></div>
+<script>
+// function for create 0 array
+function zeros(dimensions) {
+    var array = [];
+
+    for (var i = 0; i < dimensions[0]; ++i) {
+        array.push(dimensions.length == 1 ? 0 : zeros(dimensions.slice(1)));
+    }
+
+    return array;
+}
+//define function to find max value of attr among list of object
+function getMax(arr, prop) {
+    var max;
+    for (var i=0 ; i<arr.length ; i++) {
+        if (max == null || parseInt(arr[i][prop]) > parseInt(max[prop]))
+            max = arr[i];
+    }
+    return max;
+}
+//define cluster color
+color_map = ["red","green","orange","yellow","pink","blue","purple","navy","lime","#808000","#800000","#00FFFF","#FF00FF","#008080"]
+// read travel record file
+fetch('./travel_sum/travel_summary_test.json')
+  .then(response => response.json())
+  .then(travel_record => {
+    // find max distance to define the curveness of the curve line
+    max_distance = 0
+    for(let i = 0; i < travel_record.length; i++) {
+
+      var latlng1 = [travel_record[i].start_lat, travel_record[i].start_lon],
+      latlng2 = [travel_record[i].destination_lat, travel_record[i].destination_lon];
+      
+      var offsetX = latlng2[1] - latlng1[1],
+        offsetY = latlng2[0] - latlng1[0];
+      var distance = Math.sqrt(Math.pow(offsetX, 2) + Math.pow(offsetY, 2))
+      if (distance > max_distance){
+        max_distance = distance
+      }
+}
+    //find max magitude to define the size of the node    
+    var max_magitude = getMax(travel_record,"count").count
+    console.log(max_magitude)
+    for(let i = 0; i < travel_record.length; i++) {
+  // call add_curve_line function for adding all the curve line to the map
+  add_curve_line(travel_record[i].origin,travel_record[i].dest,travel_record[i].count,travel_record[i].start_lat,travel_record[i].start_lon,travel_record[i].destination_lat,travel_record[i].destination_lon,30*(travel_record[i].count/max_magitude)+5,color_map[travel_record[i].origin],max_distance)
+  // call nodemanager function for fetching cluster location file and add to map
+  node_manager(travel_record)
+}})
+  .catch(error => console.log(error));
+
+//function for read cluster_loation file and feed the input record to add_node function
+function node_manager(travel_record){
+  fetch('./cluster_loc/cluster_loc_test.json')
+  .then(response => response.json())
+  .then(data => {
+    //construct route matrix
+  var travel_matrix = zeros([data.length,data.length])
+  for(let i = 0; i < travel_record.length; i++){
+    travel_matrix[travel_record[i].origin][travel_record[i].dest]= travel_record[i].count
+  }
+  console.log(travel_matrix)
+  for(let i = 0; i < data.length; i++) {
+  
+  console.log(travel_record[1].origin)
+  add_node(data[i].id,data[i].latitude,data[i].longitude,color_map[i],travel_matrix)
+}})
+  .catch(error => console.log(error));
+}
+
+// section for adding map canvas
+var map = L.map('mapid').setView([17.10, 98], 10);
+
+var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+var googlestreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{subdomains:['mt0','mt1','mt2','mt3']}).addTo(map);
+var googlesat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{subdomains:['mt0','mt1','mt2','mt3']}).addTo(map);
+var baseMap = {"Open streets map": osm,"Google street map": googlestreets,"Google Satellite": googlesat};
+
+var layerControl = L.control.layers(baseMap).addTo(map);
+
+
+// create function for add curve to map
+function add_curve_line(origin,dest,count,s_lat,s_lon,e_lat,e_lon, magnitude=10,color= "black",max_distance){
+    // calculate the midpoint of the route to draw a curve line
+    var latlngs = [];
+
+    var latlng1 = [s_lat, s_lon],
+      latlng2 = [e_lat, e_lon];
+
+    var offsetX = latlng2[1] - latlng1[1],
+      offsetY = latlng2[0] - latlng1[0];
+
+    var r = Math.sqrt(Math.pow(offsetX, 2) + Math.pow(offsetY, 2)),
+      theta = Math.atan2(offsetY, offsetX);
+    
+      console.log(r)
+    var thetaOffset = (3.14 / 10);
+
+    var r2 = (r / 2) / (Math.cos(thetaOffset)),
+    // curve direstion defined by the theta (- thetaOffset= counter-clockwise, + thetaOffset = clockwise)
+    // 0.95 is from manual adjustment, can be adjust to fit the data
+      theta2 = theta - (((r/max_distance)*0.95)+thetaOffset);
+
+    var midpointX = (r2 * Math.cos(theta2)) + latlng1[1],
+      midpointY = (r2 * Math.sin(theta2)) + latlng1[0];
+    // calculate mid point
+    var midpointLatLng = [midpointY, midpointX];
+    //-------------- marker indentifier ------------------------
+    console.log(midpointLatLng)
+    var greenIcon = L.icon({
+    iconUrl: 'marker.png',
+    //shadowUrl: 'leaf-shadow.png',
+
+    iconSize:     [38, 95], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+  //------------------------------------------------------------
+    // debug the mid point of the route
+    //L.marker([midpointY,midpointX], {icon: greenIcon}).addTo(map);
+    latlngs.push(latlng1, midpointLatLng, latlng2);
+
+    var pathOptions = {
+      color: color,
+      weight: magnitude,
+      opacity: 0.6
+    }
+    //s_lat > e_lat ? latlng2[0] +=0.04 : latlng2[0]-=0.04
+    //s_lon > e_lon ? latlng2[1] -=0.022 : latlng2[1]+=0.022
+    //latlng2[0] += 0.02
+    //latlng2[0] += 0.02
+
+    // create leaflet curve line object and add to map
+    var curvedPath = L.curve(
+      [
+        'M', latlng1,
+        'Q', midpointLatLng,
+        latlng2
+      ], pathOptions).bindTooltip("<h1><span style=\"color:"+color_map[origin]+"\">Cluster "+origin+ "-></span><span style=\"color:"+color_map[dest]+"\">Cluster "+dest+"</span> </h1><h2>Amount: "+count+"</h2>").addTo(map);
+      
+    var arrow_size = String(1.2*magnitude) + "%"
+    const a_latlngs = curvedPath.trace([0,0.1,0.2,0.3,0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1])
+    const ghost =  L.polyline(a_latlngs).arrowheads({color: color,opacity:0.8, size: arrow_size, fill: true}).addTo(map)
+const arrowheads = ghost.getArrowheads()
+ghost.remove()
+arrowheads.addTo(map);
+}
+// add_curve_line(17.33876038,98.1068906,17.11371281,98.40051491,1)
+// add_curve_line(17.22720545,98.22567455,17.47290157,98.02630126,4)
+// add_curve_line(17.47290157,98.02630126,17.22720545,98.22567455,3)
+// add_curve_line(17.56081089,97.92060989,17.2121,97.7684,1)
+// add_curve_line(17.22720545,98.22567455,17.56081089,97.92060989,1)
+// add_curve_line(17.33876038,98.1068906,17.2121,97.7684,1)
+
+
+// add node  to map
+//L.circle([17.33876038,98.1068906], 400,{color:'red', weight:1, opacity:1,fill:true, fillColor: '#FF0000', fillOpacity:.5}).addTo(map);
+
+// define function for create node along with binding tooltips and add to the leaflet 
+function add_node(id,lat,long,color='red',travel_matrix){
+  // create html string builder for inbound and outbound tooltip visualization
+  name = id
+  var stringbuilder = "<h1>Cluster "+name
+  var inbound_str = ""
+  var outbound_str = ""
+  // create string builder for outbound traffic
+  for (var i=0 ; i<travel_matrix[parseInt(name)].length ; i++) {
+        if (travel_matrix[i][parseInt(name)]!= 0)
+            inbound_str += "<li><span style=\"color:"+color_map[i]+"\">Cluster" +i+"</span>: "+travel_matrix[i][parseInt(name)]+"</li>"
+    }
+    for (var i=0 ; i<travel_matrix[parseInt(name)].length ; i++) {
+        if (travel_matrix[parseInt(name)][i]!= 0)
+            outbound_str += "<li><span style=\"color:"+color_map[i]+"\">Cluster" +i+"</span>: "+travel_matrix[parseInt(name)][i]+"</li>"
+    }
+  var circle2 = L.circle([lat,long], 200, {
+ stroke: true, //true/false for stroke
+ color: color, //the color if stroke enabled
+ opacity: 0.5, //a value between 0 and 1
+ weight: 40, //stroke weight
+ fill: true, //true/false for fill
+ //fillColor: 'red', //HEX or color name
+ fill0pacity: 0.5, //opacity 0-1 of fill
+}).bindTooltip("<h1>Cluster "+name+"</h1><p>Inbound traffic</p><ul>"+inbound_str+"</ul><p>Outbound traffic</p><ul>"+outbound_str+"</ul>").addTo(map); //
+
+}
+
+//layerControl.addOverlay(add_node,"Clusters");
+
+// add_node("C0",17.33876038,98.1068906)
+// add_node("C1",17.11371281,98.40051491,'blue')
+// add_node("C2",17.47290157,98.02630126)
+// add_node("C3",17.22720545,98.22567455)
+// add_node("C4",17.2121,97.7684)
+// add_node("C5",16.71198301,98.56604615)
+// add_node("C6",17.3383,97.667)
+// add_node("C7",17.56081089,97.92060989)
+
+
+    </script>
+</body>
+</html>
